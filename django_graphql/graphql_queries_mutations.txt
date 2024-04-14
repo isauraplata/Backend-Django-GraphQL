@@ -1,0 +1,61 @@
+{
+  products{
+    name
+    purchasePrice
+  }
+}
+
+
+mutation{
+  createProduct(name:"cereal",description:"cereal de chocolate",
+    sellingPrice:50
+  ,purchasePrice:80
+  ,categoryId:2,
+  availableQuantity:30){
+    product{
+      id
+      name
+      description
+      sellingPrice
+      purchasePrice
+      category {
+        id
+      }
+    }
+  }
+}
+
+
+mutation{
+  deleteProduct(id:1){
+    message
+  } 
+}
+
+
+mutation{
+  updateProduct(id:3,description:"con fresas añadidas"){
+  	product{
+      id,
+      description
+    }
+  }
+}
+
+
+mutation{
+  createCategory(name:"nueva categoria",description:"nueva description"){
+    category{
+      id
+      name
+      description
+    }
+  }
+}
+
+
+mutation{
+  deleteCategory(id:3){
+    message
+  } 
+}
